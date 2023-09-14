@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>TASKIFYY</h1>
+    </header>
+    <div id="timer">
+      <h3 class="time"></h3>
+      <p class="icon"></p>
+    </div>
+    <div class="legends">
+      <h1 class="legendH">COLOR LEGENDS</h1>
+      <h4 class="compH">Completed --- <span class="compl">||||</span></h4>
+      <h4 class="incompH">Incomplete --- <span class="incompl">||||</span></h4>
+      <h4 class="duedH">
+        Due Date Today --- <span class="duedateToday">||||</span>
+      </h4>
+      <h4 class="duepH">
+        Due Date Passed --- <span class="duedatePassed">||||</span>
+      </h4>
+    </div>
+    <main class="container">
+      <div class="add-task-form">
+        <!-- <button class="addTask">Add Recurring Task</button> -->
+        <button class="addTask">Add Task</button>
+        <input
+          type="text"
+          class="search"
+          id="searchInput"
+          placeholder="Search by title..."
+        />
+
+        <i
+          class="fa-solid fa-magnifying-glass search_icon"
+          style="color: #00ff88"
+          onclick="toggleSearchBar()"
+        ></i>
+
+        <i
+          onclick="startSpeechRecognition()"
+          class="fa-solid fa-microphone"
+          id="microphoneIcon"
+          style="color: #00ff88; display: none"
+        ></i>
+
+        <div class="modal hidden">
+          <button class="close-modal" id="closeIt">&times;</button>
+          <label for="taskTitle">Title</label>
+          <input type="text" id="taskTitle" placeholder="Title" required />
+          <label for="taskDescription">Description</label>
+          <input id="taskDescription" placeholder="Description" />
+          <label for="taskDueDate">Date:</label>
+          <input type="date" id="taskDueDate" required />
+          <label for="taskCategory">Category:</label>
+          <select id="taskCategory">
+            <option value="UniWork">Univerity Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Leisure">Lesiure</option>
+          </select>
+          <label for="priority">Priority:</label>
+          <select id="priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+          <label for="recurring">Recurring:</label>
+          <select id="recurring">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+
+          <br />
+          <button id="addTaskButton" class="submit">Add Task</button>
+        </div>
+        <div class="overlay hidden"></div>
+      </div>
+      <div class="filters">
+        <button id="sortDueDateButton">Sort by Due Date</button>
+        <label for="filter" class="fil">Filter:</label>
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="incomplete">Incomplete</option>
+        </select>
+        <label for="filter2" class="fil2">Priority:</label>
+        <select id="filter2">
+          <option value="all">All</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+      <div class="task-list">
+        <!-- Task List -->
+      </div>
+    </main>
+    <div class="recurring-tasks-container">
+      <h2 id="recurring-task-heading" class="recurHead">Recurring Tasks</h2>
+      <div id="recurring-task-list" class="recurring-task-list">
+        <!-- Recurring Task List -->
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/4eb5072030.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

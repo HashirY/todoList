@@ -1,0 +1,551 @@
+/* border: 4px solid black; */
+/* background-color: rgb(0, 255, 136); */
+/* border: 4px solid rgb(0, 255, 136); */
+/* background-color: rgb(0, 255, 136); */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,500;10..48,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+button {
+  font-weight: 700;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+header {
+  /* text-align: center; */
+  background-color: #2196f3;
+  padding: 1rem 0;
+  color: rgb(0, 255, 136);
+  border: 4px solid rgb(0, 255, 136);
+  background-color: black;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+span {
+  font-size: 1.8rem;
+  color: rgb(0, 255, 136);
+}
+.fil,
+.fil2 {
+  margin-left: 46px;
+  margin-right: 1rem;
+}
+
+.add-task-form {
+  background-color: black;
+  border: 4px solid rgb(0, 255, 136);
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  /* background-color: red; */
+  margin-bottom: 1rem;
+}
+
+.des {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.buttons {
+  margin-top: 2rem;
+}
+
+.due,
+.status,
+.category {
+  font-weight: 700;
+}
+
+#taskTitle,
+#taskDescription {
+  padding: 0.3rem;
+  border-radius: 30px;
+}
+
+.task {
+  background-color: black;
+  color: white;
+  border: 4px solid rgb(0, 255, 136);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  transition: 0.5s;
+}
+
+.task:hover {
+  border: 4px solid black;
+  transform: scale(1.1);
+}
+
+.edit-button,
+.delete-button,
+.complete-button {
+  /* background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-right: 0.5rem; */
+
+  background: none;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  border: 4px solid rgb(0, 255, 136);
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.edit-button:hover,
+.delete-button:hover,
+.complete-button:hover {
+  background-color: rgb(0, 255, 136);
+  color: black;
+  border: 4px solid black;
+}
+
+.add-task-form {
+  text-align: center;
+  border: none;
+}
+
+.add-task-form button,
+#sortDueDateButton {
+  background: none;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  border: 4px solid rgb(0, 255, 136);
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.editSave {
+  border: none;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  border: 4px solid rgb(0, 255, 136);
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  margin-right: 1.2rem;
+  margin-top: 0.4rem;
+}
+
+.editSave:hover {
+  color: black;
+  background-color: rgb(0, 255, 136);
+}
+
+.add-task-form button:hover,
+#sortDueDateButton:hover {
+  color: black;
+  background-color: rgb(0, 255, 136);
+}
+
+.filters {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.task.completed {
+  transition: 0.3s;
+  background-color: rgb(0, 255, 136);
+  color: black;
+}
+
+.task.completed span {
+  color: black;
+}
+
+.filters select,
+#search {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.task-list {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+/* Task Edit Form Styling */
+
+.edit-form {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.edit-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.task input[type="text"],
+input[type="date"],
+select {
+  background: none;
+  border: 4px solid rgb(0, 255, 136);
+  border-radius: 78px;
+  color: white;
+  padding: 0.3rem;
+  margin-right: 1rem;
+}
+
+.edit-form input[type="text"],
+.edit-form textarea,
+.edit-form input[type="date"],
+.edit-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  background: none;
+}
+
+.edit-form button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+}
+
+.edit-form button:hover {
+  background-color: #0d8bf5;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+  .task-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+header {
+  display: flex;
+  /* align-content: space-around; */
+  justify-content: space-around;
+}
+
+main {
+  padding: 5rem;
+}
+
+.t,
+.de,
+.d,
+.c {
+  font-size: 19px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: 10s;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 213%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.modal label {
+  font-size: 20px;
+  /* margin-right: 10px; */
+}
+
+.modal .submit {
+  background: none;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  border: 4px solid rgb(0, 255, 136);
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.modal .submit:hover {
+  background-color: rgb(0, 255, 136);
+  border: 4px solid black;
+  color: black;
+}
+
+.modal input {
+  background: none;
+  color: white;
+  border: none;
+  border: 4px solid rgb(0, 255, 136);
+  margin-right: 2rem;
+}
+
+#closeIt {
+  border: none;
+}
+
+option {
+  background-color: black;
+}
+
+#taskCategory {
+  margin-right: 1rem;
+}
+
+.priority {
+  display: inline;
+  background: none;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  border: none;
+  color: black;
+  padding: 1rem;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-weight: 700;
+}
+
+p.priority:hover {
+  transform: scaleX(1.5);
+}
+
+.search {
+  background: none;
+  border: 4px solid rgb(0, 255, 136);
+  border-radius: 78px;
+  width: 500px;
+  color: white;
+  padding: 0.3rem;
+  margin-right: 1rem;
+  margin-left: 5rem;
+}
+
+.search_icon {
+  position: absolute;
+  left: 960px;
+  bottom: 540px;
+  /* padding: ; */
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    background-color: initial;
+  }
+  25%,
+  75% {
+    background-color: rgb(243, 87, 44);
+    /* color: black; */
+  }
+}
+
+.pastDueDate {
+  background-color: rgb(243, 87, 44);
+}
+
+/*  */
+.search {
+  width: 0;
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.search.active {
+  width: 200px; /* Adjust the width as needed */
+  opacity: 1;
+}
+
+.fa-microphone:before {
+  content: "\f130";
+  position: absolute;
+  /* top: 210px; */
+  bottom: 540px;
+  left: 940px;
+}
+
+.legends {
+  width: 700px;
+  height: 120px;
+  /* border: 4px solid rgb(0, 255, 136); */
+  position: absolute;
+  /* right: 50px; */
+  left: 20px;
+  padding: 1.5rem;
+  top: 70px;
+}
+
+.compl {
+  color: rgb(0, 255, 136);
+}
+
+.incompl {
+  color: black;
+  background-color: white;
+}
+
+@keyframes blinkSpan {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.duedateToday {
+  color: rgb(243, 87, 44);
+  animation: blinkSpan 1s infinite; /* Assuming 1s duration for the blink animation */
+}
+
+.duedatePassed {
+  color: rgb(243, 87, 44);
+}
+
+.compH,
+.incompH,
+.duedH,
+.duepH {
+  /* color: red; */
+  /* display: inline; */
+
+  margin-bottom: 20px;
+}
+
+.legendH {
+  font-size: 24px;
+}
+
+#timer {
+  /* border: 4px solid rgb(0, 255, 136); */
+  position: absolute;
+  right: 90px;
+  top: 110px;
+  text-align: center;
+  /* align-content: center; */
+  color: rgb(0, 255, 136);
+  transition: 0.5s;
+}
+
+#timer:hover {
+  transform: scale(1.2);
+}
+
+.time {
+  margin-top: 40px;
+  font-size: 34px;
+  /* display: inline; */
+}
+
+.icon {
+  font-size: 34px;
+  margin-top: 1rem;
+}
+
+.recurring-tasks-container {
+  max-width: 25%;
+  min-width: 20%;
+  position: absolute;
+  top: 338px;
+  right: 42px;
+}
+
+.recurHead {
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.recurring-task-list {
+  display: none;
+  opacity: 0; /* Start with 0 opacity */
+  transition: opacity 0.3s ease-in-out;
+}
